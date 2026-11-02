@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>给最特别的你</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #fff;
+    position: relative;
+  }
+
+  /* 星空背景 */
+  .stars {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  /* 飘落爱心 */
+  .hearts-fall {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .falling-heart {
+    position: absolute;
+    top: -50px;
+    font-size: 20px;
+    animation: fall linear infinite;
+    opacity: 0.7;
+  }
+  @keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); }
+  }
+
+  /* 主容器 */
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff9a9e, #fecfef, #ff9a9e);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+  @keyframes shine {
+    to { background-position: 200% center; }
+  }
+
+  /* 打字机 */
+  .typewriter-box {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 0 10px;
+  }
+  .typewriter {
+    font-size: clamp(18px, 4vw, 26px);
+    line-height: 1.8;
+    color: #ffe6f0;
+    max-width: 700px;
+  }
+  .cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1.2em;
+    background: #ff9a9e;
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: blink 1s infinite;
+  }
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  /* 按钮 */
+  .surprise-btn {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6b9d, #ff9a9e);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+    transition: all 0.3s ease;
+    font-weight: 600;
+  }
+  .surprise-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(255, 107, 157, 0.6);
+  }
+  .surprise-btn:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* 相册 */
+  .gallery-title {
+    margin: 70px 0 25px;
+    font-size: clamp(20px, 4vw, 28px);
+    color: #ffd6e7;
+    font-weight: 600;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+  }
+  .photo-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+  }
+  .photo-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 0 20px 40px rgba(255, 107, 157, 0.35);
+  }
+  .photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-caption {
+    padding: 12px;
+    font-size: 14px;
+    color: #ffe6f0;
+  }
+
+  /* 惊喜弹层 */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+  }
+  .modal-overlay.show {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .modal {
+    background: linear-gradient(135deg, #2d1b3d, #3d1f2e);
+    border-radius: 24px;
+    padding: 45px 35px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(255, 154, 158, 0.3);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    position: relative;
+  }
+  @keyframes popIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .modal .big-heart {
+    font-size: 60px;
+    animation: heartbeat 1.2s infinite;
+    margin-bottom: 20px;
+  }
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+  }
+  .modal p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ffe6f0;
+    margin-bottom: 25px;
+  }
+  .close-btn {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff6b9d, #ff9a9e);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s;
+  }
+  .close-btn:hover { transform: scale(1.05); }
+
+  /* 底部 */
+  .footer {
+    margin-top: 80px;
+    font-size: 13px;
+    color: rgba(255, 230, 240, 0.5);
+  }
+
+  /* 点击爱心雨 */
+  .heart-burst {
+    position: fixed;
+    font-size: 24px;
+    pointer-events: none;
+    z-index: 1000;
+    animation: burst 1.5s ease-out forwards;
+  }
+  @keyframes burst {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--dx), var(--dy)) scale(0.3); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="hearts-fall" id="heartsFall"></div>
+
+<div class="container">
+  <h1 class="title">💕 致最特别的你 💕</h1>
+
+  <div class="typewriter-box">
+    <div class="typewriter" id="typewriter"></div>
+  </div>
+
+  <button class="surprise-btn" id="surpriseBtn">点我，有惊喜 ✨</button>
+
+  <h2 class="gallery-title">📸 我们的回忆</h2>
+  <div class="gallery" id="gallery">
+    <!-- 照片在这里，替换 src 和 caption 即可 -->
+    <div class="photo-card">
+      <img src="https://picsum.photos/id/1025/400/300" alt="照片1">
+      <div class="photo-caption">第一次一起看日落 🌅</div>
+    </div>
+    <div class="photo-card">
+      <img src="https://picsum.photos/id/1062/400/300" alt="照片2">
+      <div class="photo-caption">你笑起来的样子真好看 😊</div>
+    </div>
+    <div class="photo-card">
+      <img src="https://picsum.photos/id/1015/400/300" alt="照片3">
+      <div class="photo-caption">我们走过的每一段路 🛤️</div>
+    </div>
+    <div class="photo-card">
+      <img src="https://picsum.photos/id/1043/400/300" alt="照片4">
+      <div class="photo-caption">和你在一起的每一天都值得纪念 💝</div>
+    </div>
+  </div>
+
+  <div class="footer">Made with 💖 just for you</div>
+</div>
+
+<!-- 惊喜弹层 -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="big-heart">❤️</div>
+    <p id="modalText">遇见你，是我这辈子最幸运的事。<br>谢谢你出现在我的世界里，<br>让平凡的日子都变得闪闪发光。✨</p>
+    <button class="close-btn" id="closeBtn">我也爱你 💗</button>
+  </div>
+</div>
+
+<script>
+  /* ===== 星空 ===== */
+  const starsBox = document.getElementById('stars');
+  for (let i = 0; i < 120; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 2.5 + 0.5;
+    s.style.width = size + 'px';
+    s.style.height = size + 'px';
+    s.style.left = Math.random() * 100 + '%';
+    s.style.top = Math.random() * 100 + '%';
+    s.style.animationDelay = Math.random() * 3 + 's';
+    s.style.animationDuration = (Math.random() * 2 + 2) + 's';
+    starsBox.appendChild(s);
+  }
+
+  /* ===== 飘落爱心 ===== */
+  const heartsFall = document.getElementById('heartsFall');
+  const heartEmojis = ['💕', '💖', '💗', '💓', '❤️', '💘'];
+  function createFallingHeart() {
+    const h = document.createElement('div');
+    h.className = 'falling-heart';
+    h.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+    h.style.left = Math.random() * 100 + '%';
+    h.style.fontSize = (Math.random() * 20 + 14) + 'px';
+    h.style.animationDuration = (Math.random() * 6 + 6) + 's';
+    h.style.animationDelay = Math.random() * 2 + 's';
+    heartsFall.appendChild(h);
+    setTimeout(() => h.remove(), 14000);
+  }
+  setInterval(createFallingHeart, 700);
+
+  /* ===== 打字机 ===== */
+  const lines = [
+    "有些话，想悄悄说给你听……",
+    "从遇见你的那天起，",
+    "我的世界就多了一种颜色。",
+    "是你笑起来的样子，",
+    "是每天想和你分享的小事，",
+    "是——我想和你一起变老。💕"
+  ];
+  const typeEl = document.getElementById('typewriter');
+  let lineIdx = 0, charIdx = 0, deleting = false;
+
+  function typeLoop() {
+    const current = lines[lineIdx];
+    if (!deleting) {
+      typeEl.innerHTML = current.slice(0, charIdx + 1) + '<span class="cursor"></span>';
+      charIdx++;
+      if (charIdx === current.length) {
+        deleting = true;
+        setTimeout(typeLoop, 1800);
+        return;
+      }
+      setTimeout(typeLoop, 100);
+    } else {
+      typeEl.innerHTML = current.slice(0, charIdx - 1) + '<span class="cursor"></span>';
+      charIdx--;
+      if (charIdx === 0) {
+        deleting = false;
+        lineIdx = (lineIdx + 1) % lines.length;
+        setTimeout(typeLoop, 400);
+        return;
+      }
+      setTimeout(typeLoop, 45);
+    }
+  }
+  typeLoop();
+
+  /* ===== 惊喜按钮 ===== */
+  const overlay = document.getElementById('modalOverlay');
+  document.getElementById('surpriseBtn').addEventListener('click', (e) => {
+    overlay.classList.add('show');
+    // 爱心雨
+    for (let i = 0; i < 30; i++) {
+      setTimeout(() => {
+        const b = document.createElement('div');
+        b.className = 'heart-burst';
+        b.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+        b.style.left = e.clientX + 'px';
+        b.style.top = e.clientY + 'px';
+        b.style.setProperty('--dx', (Math.random() * 400 - 200) + 'px');
+        b.style.setProperty('--dy', (Math.random() * -400 - 50) + 'px');
+        document.body.appendChild(b);
+        setTimeout(() => b.remove(), 1500);
+      }, i * 40);
+    }
+  });
+  document.getElementById('closeBtn').addEventListener('click', () => {
+    overlay.classList.remove('show');
+  });
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('show');
+  });
+</script>
+</body>
+</html>
