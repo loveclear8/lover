@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background-color: #050510;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* 鼠标跟随粒子背景 */
+  #canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 炫酷发光文字 */
+  .glitch-title {
+    font-size: clamp(32px, 8vw, 64px);
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 5px;
+    text-shadow: 
+      0 0 10px #ff0055,
+      0 0 20px #ff0055,
+      0 0 40px #ff0055,
+      0 0 80px #ff0055;
+    animation: pulse 2s infinite alternate;
+    margin-bottom: 20px;
+  }
+  @keyframes pulse {
+    0% { text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055, 0 0 40px #ff0055; }
+    100% { text-shadow: 0 0 20px #ff0055, 0 0 40px #ff0055, 0 0 80px #ff0055, 0 0 120px #ff0055; }
+  }
+
+  .subtitle {
+    font-size: 16px;
+    color: #a0a0c0;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  /* 赛博按钮 */
+  .cyber-btn {
+    position: relative;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #ff0055;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #ff0055 inset, 0 0 10px #ff0055;
+    text-shadow: 0 0 5px #fff;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+  }
+  .cyber-btn:hover {
+    background: #ff0055;
+    box-shadow: 0 0 30px #ff0055 inset, 0 0 30px #ff0055;
+    text-shadow: 0 0 10px #fff;
+  }
+
+  /* 玻璃拟态相册 */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+  }
+
+  .glass-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(255, 0, 85, 0.3);
+    border-color: rgba(255, 0, 85, 0.5);
+  }
+
+  .glass-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s;
+  }
+
+  .glass-card:hover img {
+    transform: scale(1.1);
+  }
+
+  .glass-card .caption {
+    padding: 15px;
+    text-align: center;
+    font-size: 15px;
+    color: #e0e0ff;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  /* 爱心爆炸特效 */
+  .heart-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: 30px;
+    animation: explode 1.5s ease-out forwards;
+  }
+  @keyframes explode {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; filter: drop-shadow(0 0 10px #ff0055); }
+    100% { transform: translate(var(--x), var(--y)) scale(0); opacity: 0; filter: drop-shadow(0 0 0 #ff0055); }
+  }
+
+</style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<div class="container">
+  <h1 class="glitch-title">LOVE & CODE</h1>
+  <p class="subtitle">Crafted with 💻 and ❤️ just for you</p>
+
+  <button class="cyber-btn" id="boomBtn">SYSTEM OVERLOAD</button>
+
+  <div class="gallery">
+    <div class="glass-card">
+      <img src="https://picsum.photos/id/1025/500/500" alt="照片1">
+      <div class="caption">The day we met</div>
+    </div>
+    <div class="glass-card">
+      <img src="https://picsum.photos/id/1062/500/500" alt="照片2">
+      <div class="caption">Your beautiful smile</div>
+    </div>
+    <div class="glass-card">
+      <img src="https://picsum.photos/id/1015/500/500" alt="照片3">
+      <div class="caption">Our adventure begins</div>
+    </div>
+    <div class="glass-card">
+      <img src="https://picsum.photos/id/1043/500/500" alt="照片4">
+      <div class="caption">My favorite place is next to you</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ===== 1. 鼠标跟随星空粒子 ===== */
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  let width, height;
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const particles = [];
+  const colors = ['#ff0055', '#ff9a9e', '#00e5ff', '#ffffff', '#a855f7'];
+
+  class Particle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.size = Math.random() * 3 + 1;
+      this.speedX = Math.random() * 3 - 1.5;
+      this.speedY = Math.random() * 3 - 1.5;
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.life = 1;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.life -= 0.02;
+      if (this.size > 0.2) this.size -= 0.05;
+    }
+    draw() {
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = this.life;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  // 鼠标移动生成粒子
+  window.addEventListener('mousemove', (e) => {
+    for (let i = 0; i < 5; i++) {
+      particles.push(new Particle(e.clientX, e.clientY));
+    }
+  });
+
+  // 手机触摸生成粒子
+  window.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    for (let i = 0; i < 5; i++) {
+      particles.push(new Particle(touch.clientX, touch.clientY));
+    }
+  });
+
+  function animateParticles() {
+    ctx.clearRect(0, 0, width, height);
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+      if (particles[i].life <= 0) {
+        particles.splice(i, 1);
+        i--;
+      }
+    }
+    requestAnimationFrame(animateParticles);
+  }
+  animateParticles();
+
+  /* ===== 2. 爱心爆炸 ===== */
+  const emojis = ['❤️', '💖', '💕', '✨', '💘', '💗'];
+  document.getElementById('boomBtn').addEventListener('click', (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    for (let i = 0; i < 50; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart-particle';
+      heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      heart.style.left = centerX + 'px';
+      heart.style.top = centerY + 'px';
+      
+      const angle = Math.random() * Math.PI * 2;
+      const distance = Math.random() * 400 + 100;
+      const x = Math.cos(angle) * distance;
+      const y = Math.sin(angle) * distance;
+      
+      heart.style.setProperty('--x', x + 'px');
+      heart.style.setProperty('--y', y + 'px');
+      
+      // 随机延迟
+      heart.style.animationDelay = Math.random() * 0.2 + 's';
+      
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 1700);
+    }
+  });
+</script>
+
+</body>
+</html>
