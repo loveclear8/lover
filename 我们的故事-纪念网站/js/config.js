@@ -8,9 +8,9 @@ window.SITE_CONFIG = {
   me: "你的男孩",
 
   // 在一起的纪念日（请保留时区 +08:00）
-  startDate: "2022-05-20T20:20:00+08:00",
-  sinceLabel: "2022.05.20",
-  sinceLong: "2022 年 5 月 20 日",
+  startDate: "2026-08-19T20:20:00+08:00",
+  sinceLabel: "2026.8.19",
+  sinceLong: "2026 年 8 月 19 日",
 
   hero: {
     title1: "我们的故事",
@@ -33,48 +33,48 @@ window.SITE_CONFIG = {
   // 时间轴：照片放在 assets/ 里，换成你们的合照即可
   timeline: [
     {
-      date: "2022.05.20",
+      date: "2026.08.17",
       tag: "初见",
       title: "故事开始的地方",
       text: "那天人很多，灯很亮，我却只记住了你笑起来的样子。原来心动没有预告，来了就是来了。",
       image: "assets/memory-01.svg",
-      caption: "第一次约会 · 2022",
+      caption: "第一次约会 · 2026",
       alt: "暖色街灯下，两个人的剪影并肩站在一起"
     },
     {
-      date: "2022.06.18",
+      date: "2026.08.18",
       tag: "牵手",
       title: "第一次牵你的手",
       text: "手心都出了汗，也没舍得放开。那一刻我才知道，喜欢一个人，连沉默都是甜的。",
       image: "assets/memory-02.svg",
-      caption: "第一次牵手 · 2022",
+      caption: "第一次牵手 · 2026",
       alt: "海边日落里，两个人牵着手站在沙滩上"
     },
     {
-      date: "2022.10.03",
+      date: "2026.8.03",
       tag: "旅行",
-      title: "一起去看日出",
+      title: "一起在江边散步",
       text: "我们追着日出跑了很久，最后并肩坐在公路边。风很凉，你把我的手揣进口袋里，说以后还要一起来。",
       image: "assets/memory-06.svg",
-      caption: "一起看过的日出 · 2022",
+      caption: "一起看过的风景 · 2026",
       alt: "清晨公路尽头升起太阳，两个人牵手走向远方"
     },
     {
-      date: "2023.02.14",
+      date: "2026.11.16",
       tag: "生日",
-      title: "陪你过的那个生日",
-      text: "没有电影里的盛大桥段，只有一束花、一顿饭，和一个看我时眼睛发亮的你。这样就很好。",
+      title: "陪你过的第一个生日",
+      text: "没有电影里的盛大桥段，只有一个蛋糕、一封信，和一个看我时眼睛发亮的你。这样就很好。",
       image: "assets/memory-03.svg",
-      caption: "生日快乐 · 2023",
+      caption: "生日快乐 · 2026",
       alt: "烛光里的奶油蛋糕和温暖的生日光晕"
     },
     {
-      date: "2024.05.20",
+      date: "2026.11.27",
       tag: "纪念日",
-      title: "两周年快乐",
-      text: "日子被我们过成了很多个普通的星期二，但每一个星期二，都因为有你在而值得纪念。",
+      title: "100天快乐",
+      text: "每天的日子其实都很平常，但是因为有你在而值得纪念。",
       image: "assets/memory-04.svg",
-      caption: "我们的普通一天 · 2024",
+      caption: "我们的普通一天 · 2026",
       alt: "雨夜咖啡馆的窗前，两杯冒着热气的咖啡"
     },
     {
@@ -91,8 +91,8 @@ window.SITE_CONFIG = {
   // 喜欢你的理由
   reasons: [
     { icon: "sun", title: "你的笑", text: "像冬天突然照进来的一束光，能把所有坏情绪都晒化。" },
-    { icon: "sparkles", title: "你的认真", text: "你认真做一件事的时候，眼睛里有星星，比什么都好看。" },
-    { icon: "heart", title: "你的温柔", text: "你总记得我随口说过的话，然后悄悄替我实现。" },
+    { icon: "sparkles", title: "你的可爱", text: "你总说我存你不好看的照片，因为在我眼里你怎么样都好看，那些照片记录的是最真实的你，我最喜欢的就是你。" },
+    { icon: "heart", title: "你的温柔", text: "你总记得我随口说过的话，然后悄悄放在心里。" },
     { icon: "cloud", title: "你的小脾气", text: "连生气都可爱，让我只想举白旗，再把你抱紧一点。" },
     { icon: "compass", title: "你的勇敢", text: "你比你以为的更耀眼，也比你以为的更坚强。" },
     { icon: "music", title: "你的碎碎念", text: "那些日常的小事，被你讲出来，就有了温度。" },
@@ -105,35 +105,35 @@ window.SITE_CONFIG = {
     {
       src: "assets/memory-01.svg",
       caption: "第一次约会，连晚风都是甜的",
-      date: "2022 · 初夏",
+      date: "2026 · 初夏",
       alt: "街灯下两个人的剪影插画",
       rotate: "-4deg"
     },
     {
       src: "assets/memory-02.svg",
       caption: "海边的日落，和身边的你",
-      date: "2022 · 秋",
+      date: "2026 · 秋",
       alt: "海边日落的插画",
       rotate: "3deg"
     },
     {
       src: "assets/memory-03.svg",
       caption: "陪你过的每一个生日",
-      date: "2023 · 冬",
+      date: "2026 · 冬",
       alt: "烛光生日蛋糕的插画",
       rotate: "-2.5deg"
     },
     {
       src: "assets/memory-04.svg",
       caption: "两杯咖啡，一个下午",
-      date: "2024 · 春",
+      date: "2026 · 春",
       alt: "雨夜咖啡馆的插画",
       rotate: "4deg"
     },
     {
       src: "assets/memory-05.svg",
       caption: "一起看过的星星",
-      date: "2025 · 夏",
+      date: "2026 · 夏",
       alt: "星空下露营的插画",
       rotate: "-3.5deg"
     },
