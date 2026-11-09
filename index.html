@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="zh-CN" class="is-loading">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0912">
+  <meta name="description" content="写给宝贝的纪念网站：我们的故事，未完待续。">
+  <title>我们的故事 · 未完待续</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/hero.svg" as="image" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <noscript>
+    <style>
+      #preloader { display: none !important; }
+      html.is-loading { overflow: auto !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#story">跳到正文</a>
+
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke-width="2.4"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.9a5.4 5.4 0 0 0-7.7 0L12 7l-1.1-1.1a5.4 5.4 0 0 0-7.7 7.7L12 22l8.8-8.4a5.4 5.4 0 0 0 0-7.7z"/></symbol>
+    <symbol id="i-heart-fill" viewBox="0 0 24 24"><path d="M20.8 5.9a5.4 5.4 0 0 0-7.7 0L12 7l-1.1-1.1a5.4 5.4 0 0 0-7.7 7.7L12 22l8.8-8.4a5.4 5.4 0 0 0 0-7.7z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6zM19 14l.9 2.3 2.1.7-2.1.8L19 20l-.9-2.2-2.1-.8 2.1-.7zM5 15l.7 1.8 1.8.7-1.8.6L5 20l-.7-1.9-1.8-.6 1.8-.7z"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 11a3.5 3.5 0 0 0 1 7z"/><path d="M9 21h1M14 21h2" opacity=".45"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 9h2a3 3 0 0 1 0 6h-2M8 2v2M12 2v2M4 22h14"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5-5.9-3.1-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h3l1.5-2h7L17 7h3v12H4z"/><circle cx="12" cy="13" r="3.6"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 3L3 10.5l6.3 2.2L11.5 19l3-5 5-5z"/><path d="M9.3 12.7L21 3"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8 8 0 0 1 0 12"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9l5 6M21 9l-5 6"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 6C6.5 7 5 9.5 5 12.5V18h5v-6H7.5c0-2 .8-3.3 2.8-4.2zM19.5 6C16.5 7 15 9.5 15 12.5V18h5v-6h-2.5c0-2 .8-3.3 2.8-4.2z" fill="currentColor" stroke="none"/></symbol>
+  </svg>
+
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <svg class="preloader-heart" viewBox="0 0 120 110" aria-hidden="true">
+        <path class="heart-line" d="M60 100C28 78 10 60 10 38 10 21 22 10 38 10c10 0 18 5 22 13 4-8 12-13 22-13 16 0 28 11 28 28 0 22-18 40-50 62z"/>
+      </svg>
+      <p>正在把我们的回忆装订成册</p>
+      <div class="loader-track"><span></span></div>
+      <small>OUR STORY · LOADING</small>
+    </div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true">
+    <span class="aurora-blob blob-a"></span>
+    <span class="aurora-blob blob-b"></span>
+    <span class="aurora-blob blob-c"></span>
+  </div>
+  <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+  <canvas id="fx-canvas" class="fx-canvas" aria-hidden="true"></canvas>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#top" aria-label="回到顶部">
+      <span class="brand-mark"><span class="brand-mark-inner">♥</span></span>
+      <span class="brand-copy"><strong>US</strong><small>OUR STORY</small></span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="#story" class="nav-link">关于我们</a>
+      <a href="#timeline" class="nav-link">时光轴</a>
+      <a href="#reasons" class="nav-link">心动清单</a>
+      <a href="#gallery" class="nav-link">照片墙</a>
+      <a href="#letter" class="nav-link">写给你</a>
+      <a href="#wishes" class="nav-link">愿望</a>
+    </nav>
+    <button class="sound-toggle" id="soundToggle" type="button" aria-label="播放背景音乐" aria-pressed="false">
+      <span class="sound-icon">
+        <svg class="icon icon-play"><use href="#i-play"/></svg>
+        <svg class="icon icon-pause"><use href="#i-pause"/></svg>
+      </span>
+      <span class="sound-label">夜曲</span>
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero-halo" aria-hidden="true"></div>
+      <div class="hero-word" aria-hidden="true">LOVE</div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span>A LITTLE UNIVERSE FOR YOU</p>
+          <h1 class="hero-title" id="heroTitle">
+            <span class="title-line" data-config="hero.title1">我们的故事</span>
+            <span class="title-line title-line-accent"><span data-config="hero.title2">未完待续</span><span class="title-dot">。</span></span>
+          </h1>
+          <p class="hero-sub" data-config="hero.subtitle">从 2022 年 5 月 20 日那天起，我的世界多了一个让我心软的理由。</p>
+
+          <div class="hero-typed" aria-label="想对你说的话">
+            <span class="typed-mark">“</span>
+            <span id="typedText"></span><span class="typed-caret" aria-hidden="true"></span>
+          </div>
+
+          <div class="hero-meta">
+            <div class="hero-avatars" aria-hidden="true">
+              <span class="avatar avatar-her"><img src="assets/hero.svg" alt=""></span>
+              <span class="avatar avatar-me"><span>♥</span></span>
+            </div>
+            <div class="hero-since">
+              <span>SINCE <strong>2022.05.20</strong></span>
+              <span class="hero-since-days">我们一起走过 <b data-days>0</b> 天</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#story">
+              <span>翻开我们的故事</span>
+              <svg class="icon"><use href="#i-arrow"/></svg>
+            </a>
+            <button class="btn btn-ghost" id="heroMusic" type="button">
+              <span class="btn-disc"><svg class="icon"><use href="#i-play"/></svg></span>
+              <span>听一首给你的歌</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orbit-stage" id="orbitStage">
+            <span class="orbit-aura"></span>
+            <span class="orbit-ring orbit-ring-1"></span>
+            <span class="orbit-ring orbit-ring-2"></span>
+            <span class="orbit-ring orbit-ring-3"></span>
+            <span class="orbit-dot dot-a"></span>
+            <span class="orbit-dot dot-b"></span>
+            <span class="orbit-dot dot-c"></span>
+            <figure class="hero-photo">
+              <img src="assets/hero.svg" alt="">
+              <figcaption class="hero-photo-caption"><span>US</span><i></i><span>FOREVER</span></figcaption>
+            </figure>
+            <div class="orbit-chip chip-top">
+              <svg class="icon"><use href="#i-moon"/></svg>
+              <span>今晚月色真美</span>
+            </div>
+            <div class="orbit-chip chip-left">
+              <span class="chip-kicker">TOGETHER</span>
+              <strong data-days>0</strong>
+              <span class="chip-unit">DAYS</span>
+            </div>
+            <div class="orbit-chip chip-right">
+              <span class="chip-heart">♥</span>
+              <span>永远偏心你</span>
+            </div>
+            <span class="orbit-star star-a">✦</span>
+            <span class="orbit-star star-b">✦</span>
+            <span class="orbit-star star-c">✧</span>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#story" aria-label="向下滚动">
+        <span class="scroll-cue-text">SCROLL TO OUR STORY</span>
+        <span class="scroll-cue-line"><i></i></span>
+      </a>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>I LOVE YOU</span><i>✦</i><span>朝朝暮暮</span><i>✦</i><span>岁岁年年</span><i>✦</i><span>心动不止</span><i>✦</i><span>未完待续</span><i>✦</i>
+        <span>I LOVE YOU</span><i>✦</i><span>朝朝暮暮</span><i>✦</i><span>岁岁年年</span><i>✦</i><span>心动不止</span><i>✦</i><span>未完待续</span><i>✦</i>
+      </div>
+    </div>
+
+    <section class="section intro-section" id="story" aria-labelledby="storyTitle">
+      <div class="container intro-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span class="section-no">01</span> ABOUT US</p>
+          <h2 id="storyTitle">关于我们<br><em>和那些没说完的喜欢</em></h2>
+          <span class="heading-glyph" aria-hidden="true">♡</span>
+        </div>
+        <div class="intro-copy">
+          <p class="intro-lead reveal" data-config="intro.lead">世界很大，大到我们差点错过；世界又很小，小到一转身就遇见你。</p>
+          <div class="intro-body reveal" data-delay=".1">
+            <p data-config="intro.body1">我不擅长把爱说得惊天动地，只想把喜欢藏进每一个细节里：你随口提过的那家店，你想喝的那杯热饮，你下班路上那盏总为你亮着的灯。</p>
+            <p data-config="intro.body2">这个小小的网站，装不下我们所有的故事，但装得下我想对你说的每一句：幸好是你。</p>
+          </div>
+          <div class="intro-signature reveal" data-delay=".18">
+            <span class="signature-line"></span>
+            <span data-config="intro.signature">永远偏爱你的，你的男孩</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container stats-grid">
+        <article class="stat-card reveal" data-delay="0">
+          <span class="stat-icon"><svg class="icon"><use href="#i-heart"/></svg></span>
+          <span class="stat-label">我们已经相爱</span>
+          <div class="stat-value"><span data-counter="days">0</span><small>天</small></div>
+          <p>从故事开始的那一天算起，还在继续。</p>
+          <span class="stat-glow"></span>
+        </article>
+        <article class="stat-card reveal" data-delay=".08">
+          <span class="stat-icon"><svg class="icon"><use href="#i-sparkles"/></svg></span>
+          <span class="stat-label">每日心动频率</span>
+          <div class="stat-value"><span>100</span><small>%</small></div>
+          <p>没有上限，也永远不会打折。</p>
+          <span class="stat-glow"></span>
+        </article>
+        <article class="stat-card reveal" data-delay=".16">
+          <span class="stat-icon"><svg class="icon"><use href="#i-star"/></svg></span>
+          <span class="stat-label">未来待解锁</span>
+          <div class="stat-value"><span class="infinity">∞</span></div>
+          <p>想和你一起做的事，还有很多很多。</p>
+          <span class="stat-glow"></span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section timeline-section" id="timeline" aria-labelledby="timelineTitle">
+      <div class="container">
+        <header class="section-heading section-heading-center reveal">
+          <p class="eyebrow"><span class="section-no">02</span> OUR TIMELINE</p>
+          <h2 id="timelineTitle">时光会把喜欢<br><em>酿成更好看的模样</em></h2>
+          <p class="section-sub">每一帧都普通，每一帧都舍不得删。</p>
+        </header>
+
+        <div class="timeline" id="timelineList">
+          <div class="timeline-rail" aria-hidden="true"><span id="timelineProgress"></span></div>
+          <div id="timelineItems"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reasons-section" id="reasons" aria-labelledby="reasonsTitle">
+      <div class="container">
+        <header class="section-heading section-heading-center reveal">
+          <p class="eyebrow"><span class="section-no">03</span> REASONS I LOVE YOU</p>
+          <h2 id="reasonsTitle">喜欢你的理由<br><em>写了很久，还是没写完</em></h2>
+          <p class="section-sub">如果非要列一张清单，大概会从今天写到下辈子。</p>
+        </header>
+        <div class="reasons-grid" id="reasonsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery" aria-labelledby="galleryTitle">
+      <div class="container">
+        <header class="section-heading gallery-heading reveal">
+          <div>
+            <p class="eyebrow"><span class="section-no">04</span> OUR GALLERY</p>
+            <h2 id="galleryTitle">把日子<br><em>过成一首长长的诗</em></h2>
+          </div>
+          <p class="gallery-note">有些瞬间，<br>看一眼就会重新心动。</p>
+        </header>
+        <div class="gallery-wall" id="galleryWall"></div>
+        <p class="gallery-tip reveal"><span class="tip-line"></span>点击照片，把那一刻放大</p>
+      </div>
+    </section>
+
+    <section class="section letter-section" id="letter" aria-labelledby="letterTitle">
+      <div class="container">
+        <header class="section-heading section-heading-center reveal">
+          <p class="eyebrow"><span class="section-no">05</span> A LETTER FOR YOU</p>
+          <h2 id="letterTitle">有些话，<br><em>想写下来给你</em></h2>
+          <p class="section-sub">纸短情长，见字如面。</p>
+        </header>
+
+        <div class="letter-stage reveal" id="letterStage">
+          <div class="letter-ambient" aria-hidden="true"></div>
+          <div class="envelope-wrap" id="envelopeWrap">
+            <button class="envelope" id="envelope" type="button" aria-label="拆开写给你的信" aria-expanded="false">
+              <span class="env-shadow"></span>
+              <span class="env-back"></span>
+              <span class="env-letter-peek">
+                <span class="peek-line"></span>
+                <span class="peek-line short"></span>
+              </span>
+              <span class="env-front"></span>
+              <span class="env-flap"></span>
+              <span class="env-seal">♥</span>
+              <span class="env-to"><small>TO</small> MY DEAREST</span>
+              <span class="env-hint">点击拆开这封信</span>
+            </button>
+            <p class="envelope-caption">写给 <span data-config="her">宝贝</span> 的一封情书</p>
+          </div>
+
+          <article class="letter-paper" id="letterPaper" aria-hidden="true">
+            <button class="letter-close" id="letterClose" type="button" aria-label="把信收好">
+              <svg class="icon"><use href="#i-close"/></svg>
+            </button>
+            <div class="letter-pin" aria-hidden="true"></div>
+            <header class="letter-head">
+              <span class="letter-kicker">A LETTER FOR MY DEAREST</span>
+              <h3 data-config="letter.title">写给宝贝的一封信</h3>
+              <span class="letter-date" id="letterDate">2026 / 11 / 06</span>
+            </header>
+            <div class="letter-body" id="letterBody"></div>
+            <footer class="letter-footer">
+              <div class="letter-signature" data-config="letter.signature">永远偏爱你的，你的男孩</div>
+              <p class="letter-ps" data-config="letter.ps">P.S. 今天也超级喜欢你。</p>
+            </footer>
+            <span class="letter-stamp" aria-hidden="true"><i>♥</i><small>WITH LOVE</small></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wishes-section" id="wishes" aria-labelledby="wishesTitle">
+      <div class="container wishes-grid">
+        <div class="wishes-copy">
+          <header class="section-heading reveal">
+            <p class="eyebrow"><span class="section-no">06</span> OUR BUCKET LIST</p>
+            <h2 id="wishesTitle">想和你一起<br><em>完成的那些小事</em></h2>
+          </header>
+          <p class="wishes-text reveal" data-delay=".08">不必着急，我们有一辈子的时间，一件一件慢慢完成。每完成一件，就在心里盖一个小小的章。</p>
+          <div class="wish-progress reveal" data-delay=".14">
+            <div class="wish-progress-top">
+              <span>愿望进度</span>
+              <strong><span id="wishDone">0</span> / <span id="wishTotal">8</span></strong>
+            </div>
+            <div class="wish-bar"><span id="wishBar"></span></div>
+            <p class="wish-progress-note" id="wishNote">点一点，把完成的愿望点亮。</p>
+          </div>
+          <div class="wishes-deco" aria-hidden="true">
+            <span>✦</span><i></i><span>♡</span><i></i><span>✦</span>
+          </div>
+        </div>
+        <div class="wish-panel reveal" data-delay=".1">
+          <ul class="wish-list" id="wishList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section constellation-section" id="constellation" aria-labelledby="constellationTitle">
+      <div class="container constellation-grid">
+        <div class="constellation-art reveal">
+          <div class="constellation-orbit" aria-hidden="true"></div>
+          <svg id="constellationSvg" viewBox="0 0 800 700" role="img" aria-label="由星星连成的心形星座">
+            <defs>
+              <radialGradient id="starGlow" cx=".5" cy=".5" r=".5">
+                <stop offset="0" stop-color="#fff6d8" stop-opacity=".95"/>
+                <stop offset=".35" stop-color="#ffd9a0" stop-opacity=".4"/>
+                <stop offset="1" stop-color="#ffcf95" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="constLine" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffe1ad" stop-opacity=".1"/>
+                <stop offset=".45" stop-color="#ffd0a2" stop-opacity=".65"/>
+                <stop offset="1" stop-color="#c7b4ff" stop-opacity=".28"/>
+              </linearGradient>
+              <filter id="constBlur" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="8"/>
+              </filter>
+            </defs>
+            <g id="constellationLines" fill="none" stroke="url(#constLine)" stroke-linecap="round"></g>
+            <g id="constellationStars"></g>
+            <g id="constellationLabels" class="const-labels"></g>
+          </svg>
+          <span class="const-coord">CONSTELLATION · NO.0520</span>
+          <span class="const-shooting" aria-hidden="true"></span>
+        </div>
+
+        <div class="constellation-copy">
+          <header class="section-heading reveal">
+            <p class="eyebrow"><span class="section-no">07</span> WRITTEN IN THE STARS</p>
+            <h2 id="constellationTitle">把喜欢<br><em>写进整片星空</em></h2>
+          </header>
+          <p class="constellation-text reveal" data-delay=".08">我把想对你说的话，挂在了星星上。以后每一个抬头看夜的瞬间，都是我隔着人海在说：我想你。</p>
+          <div class="constellation-quote reveal" data-delay=".15">
+            <svg class="icon"><use href="#i-quote"/></svg>
+            <p>无论相隔多远，<br>我们抬头，都是同一片星空。</p>
+          </div>
+          <div class="constellation-meta reveal" data-delay=".2">
+            <span><b>YOU</b> 你</span><i></i><span><b>ME</b> 我</span><i></i><span><b>HOME</b> 家</span><i></i><span><b>ALWAYS</b> 永远</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section finale-section" id="finale" aria-labelledby="finaleTitle">
+      <div class="finale-orbit" aria-hidden="true">
+        <span class="finale-ring finale-ring-1"></span>
+        <span class="finale-ring finale-ring-2"></span>
+        <span class="finale-spark s1">✦</span>
+        <span class="finale-spark s2">✦</span>
+        <span class="finale-spark s3">✧</span>
+      </div>
+      <div class="container finale-inner">
+        <p class="eyebrow reveal">THE BEST IS YET TO COME</p>
+        <h2 id="finaleTitle" class="reveal" data-delay=".06">第 <span class="finale-days" data-days>0</span> 天，<br>我依然，<span class="finale-last">比昨天更喜欢你。</span></h2>
+        <p class="finale-sub reveal" data-delay=".12">如果余生是一本书，我希望能和你一起，把每一页都写满。</p>
+        <div class="heart-cta-wrap reveal" data-delay=".18">
+          <button class="heart-cta" id="heartCta" type="button">
+            <span class="heart-cta-ring"></span>
+            <span class="heart-cta-inner">
+              <svg class="icon"><use href="#i-heart-fill"/></svg>
+              <span>收下我的心</span>
+            </span>
+          </button>
+          <p class="heart-hint">点一下，会有很多很多颗心</p>
+        </div>
+        <p class="finale-sign reveal" data-delay=".22">— <span data-config="me">你的男孩</span>，写给我们的小宇宙</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="#top">
+        <span class="footer-mark">♥</span>
+        <span><strong>US</strong><small>OUR STORY, FOREVER UNFINISHED</small></span>
+      </a>
+      <p class="footer-line">仅此一生，偏爱一人。</p>
+      <div class="footer-meta">
+        <span>© <span id="year">2026</span> OUR LITTLE UNIVERSE</span>
+        <span class="footer-dot">·</span>
+        <span>MADE WITH ALL MY LOVE</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="照片预览" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="关闭预览"><svg class="icon"><use href="#i-close"/></svg></button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="上一张"><svg class="icon"><use href="#i-left"/></svg></button>
+    <figure class="lightbox-figure">
+      <div class="lightbox-img-wrap"><img id="lightboxImg" src="assets/memory-01.svg" alt=""></div>
+      <figcaption>
+        <span id="lightboxCaption">第一次约会，连晚风都是甜的</span>
+        <small id="lightboxDate">2022 · 初夏</small>
+      </figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="下一张"><svg class="icon"><use href="#i-right"/></svg></button>
+    <div class="lightbox-count"><span id="lightboxCurrent">1</span> / <span id="lightboxTotal">6</span></div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-heart">♥</span>
+    <span id="toastText">正在播放：写给宝贝的夜曲</span>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
